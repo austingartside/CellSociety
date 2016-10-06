@@ -1,3 +1,6 @@
+//This entire file is part of my masterpiece
+//Austin Gartside
+
 package model;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +12,18 @@ import view.Simulations;
 /**
  * @author austingartside
  *
- *Creates and updates grid for game of life simulations, allows different neighbor conventions
+ * Creates and updates grid for game of life simulations, allows different neighbor conventions
+ * Originally this code was very raw. It implemented the rules, but it was with many if and elfe statements and in very few
+ * and large functions Additionally variable values and constants were hardcoded in and the grid was passed to the simulation.
+ * Over the course of the project the code was changed so that the Grid implmenetation was hid in CellGrid, the String constants
+ * were placed in a resoource file, and the starting states of the cells was determined by the XML. I think the code is 
+ * well-designed because it is compact, hides unnecessary details in super classes, allows for neighbor choices (which it did
+ * not do originally), has all functionality separated into different methods, and is not overly long. I worked hard to make
+ * sure to only pass in List<> to functions or to return that instead of an array list since that is good design practice. I
+ * extracted methods as much as possible so that the code is very modular and I avoid all magic numbers. I used inheritance
+ * as much as possible to make the code more readable and flexible (inheritance meaning using the super class methods), so
+ * it demonstrates the strength of the CellGrid class as well. Intersting design element is the neighbor convention selection. I
+ * tried as much as possible to avoid duplicated code or unnecessary if and else statements. 
  */
 public class GameOfLifeSimulation extends CellGrid {
 	
@@ -33,7 +47,15 @@ public class GameOfLifeSimulation extends CellGrid {
 		getNeighborConvention();
 	}
 	
-	public void getNeighborConvention(){
+	
+	
+	/**
+	 * based on the neighborConvention string of the format "B(numbers) S(numbers) makes the rules
+	 * for number live neighbors to revive a cell and number of live neighbors to keep a cell alive
+	 * Number(s) after B indicate number needed to rebirth a dead cell
+	 * Number(s) after S indicate number of live neighbors to keep a cell alive
+	 */
+	private void getNeighborConvention(){
 		String[] neighborConventionList = neighborConvention.split(" ");
 		numsToSurvive = new ArrayList<Integer>();
 		numsToBeBorn = new ArrayList<Integer>();
