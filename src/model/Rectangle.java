@@ -6,7 +6,7 @@ import javafx.scene.shape.Shape;
 import view.SceneConstant;
 
 /**
- * 
+ * A rectangle class
  * @author Jordan Frazier (jrf30)
  *
  */

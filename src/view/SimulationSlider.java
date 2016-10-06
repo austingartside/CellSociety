@@ -9,7 +9,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 /** 
- * 
+ * Creates the sliders on the MainView that are linked to dynamically updating
+ * labels. 
+ * Also updates the Configuration with its new values
  * @author Jordan Frazier (jrf30)
  *
  */

@@ -9,7 +9,7 @@ import javafx.scene.shape.Shape;
 import view.SceneConstant;
 
 /** 
- * 
+ * A triangle class
  * @author Jordan Frazier (jrf30)
  *
  */

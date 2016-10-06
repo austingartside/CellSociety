@@ -5,7 +5,7 @@ import config.State;
 import javafx.scene.shape.Shape;
 
 /**
- * 
+ * Cell defines the behavior each node in the simulation will have.
  * @author Jordan Frazier (jrf30)
  * @author Charles Xu (cx15)
  *

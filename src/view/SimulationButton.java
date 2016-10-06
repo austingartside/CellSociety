@@ -2,7 +2,8 @@ package view;
 import javafx.scene.control.Button;
 
 /**
- * 
+ * The classic simulation button on the main view. 
+ * Can add functionality to this class as needed
  * @author Jordan Frazier (jrf30)
  *
  */

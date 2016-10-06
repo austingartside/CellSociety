@@ -10,7 +10,9 @@ import view.SceneConstant;
 
 
 /**
- * 
+ * Defines the calculations to render different shapes. 
+ * To add new shapes, define the shape's calculations here. 
+ * Used by CellGrid.java to render specified shapes onto the UI. 
  * @author Jordan Frazier
  *
  */
@@ -35,6 +37,18 @@ public class Render {
 		height = calculateSize(SceneConstant.GRID_HEIGHT.getValue(), rows);
 	}
 
+	/**
+	 * Chooses which shape to render
+	 * Add to this method when new shapes are implemented
+	 * @param cell
+	 * @param shape
+	 * @param isEven
+	 * @param xPos
+	 * @param yPos
+	 * @param yIndex
+	 * @param xIndex
+	 * @return
+	 */
 	public Shape chooseRender(Cell cell, String shape, int isEven, double xPos, double yPos, int yIndex, int xIndex) {
 		this.isEven = isEven;
 		Shape renderedShape = null;
@@ -90,7 +104,7 @@ public class Render {
 		return triangle;
 	}
 
-	public Shape renderHexagon(Cell cell, double xPos, double yPos, int yIndex, int xIndex) {
+	private Shape renderHexagon(Cell cell, double xPos, double yPos, int yIndex, int xIndex) {
 		Polygon hexagon = new Polygon();
 		double[] center = new double[2];
 		if (isEven % 2 == 0) {
@@ -149,6 +163,15 @@ public class Render {
 				|| cell.getCurrentstate().equals("obstacle");
 	}
 
+	/**
+	 * Renders the 'patch' shape used in sugar and ant simulations
+	 * @param cell
+	 * @param xPos
+	 * @param yPos
+	 * @param yIndex
+	 * @param xIndex
+	 * @return
+	 */
 	public Shape renderPatch(Cell cell, double xPos, double yPos, int yIndex, int xIndex) {
 		double radiusX = calculateSize(SceneConstant.GRID_WIDTH.getValue(), cols) / 5;
 		double radiusY = calculateSize(SceneConstant.GRID_HEIGHT.getValue(), rows) / 5;

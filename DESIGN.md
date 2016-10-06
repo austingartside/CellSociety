@@ -109,5 +109,20 @@ Austin: General Backend
 Jordan: Frontend
 
 
+### Adding new features:
+Add to UI:
+* All UI changes should be added or implemented inside of MainView.java. Rendering new shapes can be implemented in Render.java. 
+At the moment, to implement a new shape, one does not need to add a new shape class. It is enough to define a new set of 
+neighbors (with row / column deltas) inside of CellGrid.java, and calculations to render the new shape in Render.java.
+* To add a new simulation and be able to switch to it from the main view, simply add the simulation name into the resource file,
+then add that onto the MainView.findSimulation() method. 
+* New button functionality needs to be added to MainView.createAllButtons(), and then the event handlers implemented in a separate class.
+In the future, I would like to encapsulate all button functionality into another class to increase readability and ensure that
+each class is doing as little as possible to function correctly
+
+Add Simulation:
+
+Add XMl?: 
+
 
 

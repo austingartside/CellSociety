@@ -36,7 +36,9 @@ import model.SegregationSimulation;
 import model.SugarSimulation;
 
 /**
- * 
+ * This class creates the main scene, provides functionality for all buttons, and 
+ * contains the game loop that updates the grid. 
+ * Collaborates with CellGrid.java in order to update the grid. 
  * @author Jordan Frazier (jrf30)
  *
  */
@@ -248,15 +250,6 @@ public class MainView {
 		setButtonContainerParameters(buttonContainer);
 	}
 
-	/**
-	 * Creates button and sets an event handler
-	 * 
-	 * @param name
-	 *            - name of the button
-	 * @param handler
-	 *            - the event handler of the button
-	 * @return
-	 */
 	private SimulationButton makeButton(String name, EventHandler<ActionEvent> handler) {
 		SimulationButton button = new SimulationButton(myResources.getString(name));
 		setDimensions(button);
@@ -392,6 +385,10 @@ public class MainView {
 		});
 	}
 
+	/**
+	 * Method that is called when an exception is thrown. 
+	 * Informs user that an error has occurred
+	 */
 	private void handleExceptionDialog() {
 		Alert alert = new Alert(AlertType.ERROR);
 		alert.setTitle("Exception");

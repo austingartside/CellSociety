@@ -5,7 +5,8 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.ComboBox;
 
 /**
- * 
+ * An enum of all simulations. 
+ * Add simulations to this enum when new ones are implemented
  * @author Jordan Frazier
  *
  */
